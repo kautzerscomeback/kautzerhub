@@ -1,1 +1,41 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()\r\n\r\nlocal Window = Rayfield:CreateWindow({\r\n    Name = \"kautzer hub\",\r\n    LoadingTitle = \"loading\",\r\n    LoadingSubtitle = \"by kautzerbonito\",\r\n    ConfigurationSaving = {\r\n       Enabled = true,\r\n       FolderName = nil, -- Create a custom folder for your hub/game\r\n       FileName = \"kautzer Hub\"\r\n    },\r\n    Discord = {\r\n       Enabled = false,\r\n       Invite = \"noinvitelink\", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD\r\n       RememberJoins = true -- Set this to false to make them join the discord every time they load it up\r\n    },\r\n    KeySystem = false, -- Set this to true to use our key system\r\n    KeySettings = {\r\n       Title = \"Untitled\",\r\n       Subtitle = \"Key System\",\r\n       Note = \"No method of obtaining the key is provided\",\r\n       FileName = \"Key\", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file\r\n       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script\r\n       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from\r\n       Key = {\"Hello\"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings (\"hello\",\"key22\")\r\n    }\r\n })\r\n\r\n local Money = Window:CreateTab(\"money hacks\", 4483362458) -- Title, Image\r\n\r\nlocal GiveMoneyButton = Money:CreateButton({\r\n   Name = \"give 1m cash\",\r\n   Callback = function()\r\n        local args = {\r\n        [1] = \"deposit\",\r\n        [2] = -1000000\r\n}\r\n\r\ngame:GetService(\"ReplicatedStorage\"):WaitForChild(\"ATMRF\"):InvokeServer(unpack(args))\r\n   end,\r\n})"
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "kautzer hub",
+    LoadingTitle = "loading",
+    LoadingSubtitle = "by kautzerbonito",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "kautzer Hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+ local Money = Window:CreateTab("money hacks", 4483362458) -- Title, Image
+
+local GiveMoneyButton = Money:CreateButton({
+   Name = "give 1m cash",
+   Callback = function()
+        local args = {
+        [1] = "deposit",
+        [2] = -1000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ATMRF"):InvokeServer(unpack(args))
+   end,
+})
