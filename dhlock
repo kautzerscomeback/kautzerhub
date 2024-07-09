@@ -288,10 +288,6 @@ Tab3:Button("Realistic Speed Glitch (V)",function(bool)
     end)
 end)
  
-Tab3:Button("FLY (X)",function(bool)
-    loadstring(game:HttpGet("https://pastebin.com/raw/sUA9m6M6"))()
-end)
- 
 Tab3:Slider("Fov Camera",80,200,function(text)
     workspace.CurrentCamera.FieldOfView = (text)
 end)
@@ -404,61 +400,6 @@ end
 game:GetService("UserInputService").InputBegan:connect(TrashTalk)
 end)
  
-local Tab4 = Window:Tab("Anti-Lock",false)
- 
-Tab4:Label("Anti-Lock")
- 
-Tab4:Button("FIX ANTILOCK",function(bool)
- 
-    for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
-            v:Destroy()
-        end
-    end
-    game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
-        repeat
-            wait()
-        until game.Players.LocalPlayer.Character
-        char.ChildAdded:Connect(function(child)
-            if child:IsA("Script") then 
-                wait(0.1)
-                if child:FindFirstChild("LocalScript") then
-                    child.LocalScript:FireServer()
-                end
-            end
-        end)
-    end)
- 
-end)
- 
-local glitch = false
-local clicker = false
- 
-Tab4:Textbox("AntiLock (use -0.10 to -0.60)","Speed",function(a)
- 
-    getgenv().Multiplier = a
- 
-end, {
-    ["clear"] = false,
-})
- 
-Tab4:Button("Antilock Improved (Z)",function(bool)
-    local userInput = game:service('UserInputService')
-    local runService = game:service('RunService')
- 
-    userInput.InputBegan:connect(function(Key)
-        if Key.KeyCode == Enum.KeyCode.Z then
-            Enabled = not Enabled
-            if Enabled == true then
-                repeat
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
-                    runService.Stepped:wait()
-                until Enabled == false
-            end
-        end
-    end)
-end)
- 
 local Tab5 = Window:Tab("Teleports",false)
  
 Tab5:Label("Teleports")
@@ -497,14 +438,6 @@ end)
  
 Tab5:Button("Casino 1v1",function(value)
     getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-962.72345, 21.2549973, -186.814987, -0.0274876002, 2.91178949e-05, 0.999621451, -5.5798846e-06, 1, -2.92823333e-05, -0.999621451, -6.38268148e-06, -0.0274876002)
-end)
- 
-Tab5:Button("Bank",function(value)
-    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-402.123718, 21.75, -283.988617, 0.0159681588, -0.000121377925, -0.999872446, -2.60148026e-05, 1, -0.000121808866, 0.999872506, 2.79565484e-05, 0.0159681737)
-end)
- 
-Tab5:Button("Main Food",function(value)
-    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-338.352173, 23.6826477, -297.2146, -0.0060598203, -1.03402984e-08, -0.999981582, -1.61653102e-09, 1, -1.03306892e-08, 0.999981582, 1.55389912e-09, -0.0060598203)
 end)
  
 local Tab6 = Window:Tab("Keybind",false)
