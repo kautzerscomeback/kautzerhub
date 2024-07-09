@@ -1,4 +1,5 @@
 local Toggled = false
+local KeyCode = 'm'
 local hip = 2.80
 local val = -35
 
