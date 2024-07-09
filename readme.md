@@ -1,6 +1,5 @@
-Antilock:
+Antilock: (press m to use)
 ```
-local KeyCode = 'm'
 loadstring(game:HttpGet("https://raw.githubusercontent.com/kautzerscomeback/kautzerhub/main/dhantilock"))()
 ```
 
