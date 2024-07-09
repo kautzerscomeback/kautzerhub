@@ -1,7 +1,7 @@
 Antilock:
 
-local KeyCode = 'm'
-loadstring(game:HttpGet("https://raw.githubusercontent.com/kautzerscomeback/kautzerhub/main/dhantilock"))()
+```local KeyCode = 'm'
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kautzerscomeback/kautzerhub/main/dhantilock"))()```
 
 
 Lock:
